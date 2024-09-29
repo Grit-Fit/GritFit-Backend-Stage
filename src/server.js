@@ -33,7 +33,7 @@ app.post( '/api/createAccount' , (req,res)=>{
     }
     const newUser = { username, email, password };
     users.push(newUser);
-    const token = jwt.sign({ username: user.username, email: user.email }, JWT_SECRET, { expiresIn: '1d' }); 
+    const token = jwt.sign({ username: username, email: email }, JWT_SECRET, { expiresIn: '1d' }); 
     console.log('Users registered:', users);
     return res.status(201).json({message: 'User record added successfully!', token});
 })
