@@ -1,6 +1,6 @@
-// backend/api/signIn.js
+// api/signIn.js
 
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
 // In-memory users array (should be shared or moved to a database)
 let users = [
@@ -8,7 +8,7 @@ let users = [
   { username: "johnDoe", email: "john@example.com", password: "johnPassword" },
 ];
 
-module.exports = (req, res) => {
+export default function handler(req, res) {
   const allowedOrigin = process.env.FRONTEND_URL || "*";
   res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
@@ -49,4 +49,4 @@ module.exports = (req, res) => {
         "Invalid Username or Password, Please create an account if not registered.",
     });
   }
-};
+}
