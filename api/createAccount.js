@@ -9,8 +9,9 @@ let users = [
 
 module.exports = (req, res) => {
   // Enable CORS (if needed)
-  const allowedOrigin = process.env.FRONTEND_URL || "*";
-  res.setHeader("Access-Control-Allow-Origin", allowedOrigin); // Update '*' to your frontend URL in production
+  const allowedOrigin = process.env.FRONTEND_URL;
+  res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
+  res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 

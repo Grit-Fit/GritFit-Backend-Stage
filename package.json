@@ -1,7 +1,6 @@
 {
   "name": "gritfit-backend",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "deploy": "vercel --prod"
   },
